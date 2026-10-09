@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# This file is part of midnight-node.
+# Copyright (C) Midnight Foundation
+# SPDX-License-Identifier: Apache-2.0
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Network = testnet
+#export CARDANO_NODE_NETWORK_ID=1
+
+# Network = mainnet
+export CARDANO_NODE_NETWORK_ID=mainnet
+
+# A single token must be attached to a valid registration.  Assume empty asset
+# name
+cardano-cli hash script \
+  --script-file cnight_policy.plutus > cnight_policy.hash
+echo "CNight Policy ID              : `cat cnight_policy.hash`"
+
+# A single token must be attached to a valid registration.  Assume empty asset
+# name
+cardano-cli hash script \
+  --script-file mapping_validator.plutus > mapping_validator.hash
+echo "Mapping Validator Policy ID: `cat mapping_validator.hash`"
+
+# Address to observe for registrations
+cardano-cli address build \
+   --payment-script-file mapping_validator.plutus > mapping_validator.addr
+echo "Mapping Validator address     : `cat mapping_validator.addr`"
+

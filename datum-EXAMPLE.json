@@ -1,0 +1,18 @@
+{
+  "constructor": 0,
+  "fields": [
+    {
+      "constructor": 0,
+      "fields": [
+        {
+# 28-byte Cardano Stake key hash
+          "bytes": "60986dd2297585b26878ea8c73cbec243aaca3cfafaad7dd47d5303f"
+        }
+      ]
+    },
+    {
+# 33-byte Dust Public Key
+      "bytes": "73b73075fce88f725b1ecbf7cfc1bae91724a8aec3161a7a0a14d516feeb85f754"
+    }
+  ]
+}
