@@ -6,5 +6,6 @@
 5) edit register.sh with created collateral UTXO and another UTXO with enough ADA to cover transaction cost of minting, etc.
 6) if signing offline then perform the build-transaction step in register.sh from ONLINE machine and transfer built transaction to OFFLINE machine to sign, then transfer signed TX back
     to ONLINE machine to submit to mainnet node, else run register.sh from ONLINE machine
-7) once registraton lands on mainnet send cNIGHT to wallet in order to trigger the generation
+7) once registraton lands on mainnet then generation starts once that stake key actually moves cNIGHT. Either send cNIGHT to wallet in order to trigger the generation 
+    or if cNIGHT already in wallet then perform a self-send (send it to yourself).
 8) Dust should begin to get generated roughly 12 hours afterwards 
